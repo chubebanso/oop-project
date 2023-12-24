@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TagsController">
+   <children>
+      <AnchorPane layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="799.0">
+         <children>
+            <Text layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NFT TAGS" wrappingWidth="185.30615234375" fill="#0f0d38">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="40.0" />
+               </font>
+            </Text>
+            <HBox layoutX="420.0" layoutY="21.0" prefHeight="70.0" prefWidth="379.0" style="-fx-background-color: transparent;">
+               <children>
+                  <TextField fx:id="searchByName" onAction="#onSearchByName" onMouseClicked="#clearTextField" opacity="0.57" prefHeight="72.0" prefWidth="379.0" stylesheets="@../css/SearchBar.css" text="Enter name to search">
+                     <padding>
+                        <Insets left="12.0" />
+                     </padding>
+                  </TextField>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <DatePicker fx:id="datePicker" layoutX="420.0" layoutY="106.0" onAction="#onDateChange" prefHeight="70.0" prefWidth="379.0" promptText="Select date" stylesheets="@../css/DatePicker.css">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </DatePicker>
+            <ComboBox fx:id="filterType" layoutY="106.0" onAction="#onFilterType" prefHeight="70.0" prefWidth="389.0" promptText="Customize" stylesheets="@../css/ComboBox.css">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ComboBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane prefHeight="498.0" prefWidth="800.0">
+         <children>
+            <TableView fx:id="table" focusTraversable="false" onMouseClicked="#openBlogsTable" prefHeight="500.0" prefWidth="800.0" stylesheets="@../css/Table.css">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="122.0" text="ID" />
+                <TableColumn fx:id="tag" editable="false" minWidth="0.0" prefWidth="477.0" text="Tags" />
+              </columns>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TableView>
+         </children>
+         <StackPane.margin>
+         </StackPane.margin>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </AnchorPane>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</StackPane>
